@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Lizenzbestimmung</title>
+<style>
+body {
+    background: linear-gradient(135deg,#0f172a,#111827);
+    color: white;
+    font-family: Inter;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+}
+
+.box {
+    width:700px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 0 40px rgba(0,200,255,0.2);
+}
+
+button {
+    background: linear-gradient(90deg,#00c8ff,#7c3aed);
+    border:none;
+    padding:15px 30px;
+    border-radius:15px;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+<h1>📜 Lizenzbestimmung</h1>
+
+<p>
+Mit der Nutzung des Zuvano Clients akzeptierst du die Nutzungsbedingungen.
+</p>
+
+<button onclick="accept()">Akzeptieren</button>
+</div>
+
+<script>
+const { ipcRenderer } = require('electron');
+
+function accept() {
+    ipcRenderer.send('licenseAccepted');
+}
+</script>
+
+</body>
+</html>

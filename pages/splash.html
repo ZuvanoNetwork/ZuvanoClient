@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Zuvano</title>
+<style>
+body {
+    margin:0;
+    background: transparent;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+}
+
+.card {
+    width:450px;
+    height:250px;
+    background: rgba(15,23,42,0.9);
+    border-radius:30px;
+    backdrop-filter: blur(20px);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-family: Inter;
+    box-shadow:0 0 50px rgba(0,200,255,0.3);
+}
+
+.loader {
+    width:200px;
+    height:8px;
+    background:#1e293b;
+    border-radius:999px;
+    overflow:hidden;
+    margin-top:20px;
+}
+
+.bar {
+    width:0%;
+    height:100%;
+    background:linear-gradient(90deg,#00c8ff,#7c3aed);
+    animation:load 2s forwards;
+}
+
+@keyframes load {
+    from { width:0%; }
+    to { width:100%; }
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+<h1>Zuvano</h1>
+<p>Desktop Client wird gestartet...</p>
+
+<div class="loader">
+<div class="bar"></div>
+</div>
+</div>
+
+</body>
+</html>
