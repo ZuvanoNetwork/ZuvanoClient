@@ -5,29 +5,56 @@
   "main": "main.js",
   "author": "Zuvano",
   "license": "MIT",
+
   "scripts": {
     "start": "electron .",
     "build": "electron-builder"
   },
+
   "dependencies": {
     "discord-rpc": "^4.0.1",
     "electron-store": "^8.1.0",
     "electron-updater": "^6.1.7"
   },
+
   "devDependencies": {
     "electron": "^31.0.0",
     "electron-builder": "^24.13.3"
   },
+
   "build": {
     "appId": "eu.zuvano.client",
     "productName": "Zuvano",
+
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "ZuvanoNetwork",
+        "repo": "ZuvanoClient"
+      }
+    ],
+
+    "directories": {
+      "output": "dist"
+    },
+
+    "files": [
+      "**/*",
+      "!node_modules/.cache/**/*"
+    ],
+
     "win": {
       "target": "nsis",
       "icon": "assets/icon.ico"
     },
+
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
+      "allowElevation": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Zuvano",
       "license": "LICENSE.txt"
     }
   }
